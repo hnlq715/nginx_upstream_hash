@@ -425,9 +425,9 @@ static void ngx_http_upstream_hash_next_peer(ngx_http_upstream_hash_peer_data_t 
         || uhpd->peers->peer[current].down)) {
 
 #if (NGX_HTTP_UPSTREAM_CHECK)
-        ngx_log_debug1(NGX_LOG_DEBUG_HTTP, pc->log, 0,
+        ngx_log_debug1(NGX_LOG_DEBUG_HTTP, log, 0,
                        "get hash peer, check_index: %ui",
-                       peer->check_index);
+                       uhpd->peers->peer[current].check_index);
 
         if (ngx_http_upstream_check_peer_down(uhpd->peers->peer[current].check_index)) {
             continue;
